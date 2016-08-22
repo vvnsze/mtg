@@ -19,16 +19,10 @@ app.use(function(req, res, next) {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
-
-
-// app.get('/',function(req,res){
-//   res.send('Hello World');
-// });
-
 app.get('/card',function(req,res){
   mtg.card.find(Math.floor((Math.random() * 800) + 1))
   .then(result => {
-      console.log('___line 23___this is the name of the card' ,result.card.name);
+      // console.log('___line 23___this is the name of the card' ,result.card.name);
       console.log('+++line 23+++result.card' ,result.card);
       res.status(200).send(result.card);
   })

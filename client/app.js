@@ -11,6 +11,7 @@ app.controller('MTGController', function ($scope, Card) {
     .then(function(card){
       console.log(card);
       $scope.data.card = card.name;
+      $scope.data.cardImage = card.imageUrl;
       // console.log('this it the scope card' ,$scope.data.card)
     })
     .catch(function(){
