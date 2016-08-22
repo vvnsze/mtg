@@ -17,6 +17,7 @@ app.controller('MTGController', function ($scope, Card) {
     .catch(function(){
       console.error(error);
     });
+
   }
 
 });
