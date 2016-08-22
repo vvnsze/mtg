@@ -3,13 +3,13 @@ var express = require('express');
 var app = express();
 var mtg = require('mtgsdk');
 var bodyParser = require('body-parser');
-var morgan = require('morgan');
+//var morgan = require('morgan');
 
 
 //middleware
 
 app.use(express.static(__dirname + '/../client'));
-app.use(morgan('dev'));
+//app.use(morgan('dev'));
 
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
