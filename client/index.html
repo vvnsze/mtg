@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <head ng-app="MTG">
     <meta charset="utf-8">
     <title></title>
   </head>
   <body>
-    <h1>Hello World</h1>
+    <div class="main" ng-controller="MTGController">
+    <h1>Magic The Gathering</h1>
+    <div ng-view></div>
+    <script src="/bower_components/angular/angular.js"></script>
+    </div>
+    <script src="app.js"></script>
   </body>
 </html>
