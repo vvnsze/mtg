@@ -5,17 +5,20 @@ app.controller('MTGController', function ($scope, Card) {
 
   $scope.data = {};
 
-  var renderCard = function(){
+  $scope.renderCard = function() {
+    console.log('renderCard fired in MTGController')
     Card.fetchCard()
     .then(function(card){
-      $scope.data.card = card;
+      console.log(card);
+      $scope.data.card = card.name;
+      // console.log('this it the scope card' ,$scope.data.card)
     })
     .catch(function(){
       console.error(error);
     });
   }
 
-  };
+});
 
 app.factory('Card',function($http){
 
@@ -24,8 +27,11 @@ app.factory('Card',function($http){
       method:'GET',
       url:'/card'
     })
-    .then(function(reponse){
+    .then(function(response){
+      console.log('response in fetchCard in Card factory:',response)
       return response.data;
+    }).catch(function(error){
+      console.error("failed to retrieve card properly");
     });
   };
 
